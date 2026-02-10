@@ -3,64 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>رزومه‌ساز فارسی</title>
+  <title>رزومه ساز فارسی</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Splash / خوش آمدگویی -->
+<!-- صفحه خوش آمد گویی -->
 <div id="splash">
-  <h1>Erfan Fallah</h1>
-  <p>رزومه شخصی من</p>
-  <button onclick="startApp()">شروع</button>
+  <h1>رزومه ساز فارسی</h1>
+  <p>خوش آمدید به رزومه ساز فارسی</p>
+  <button onclick="startApp()">ورود</button>
 </div>
 
-<!-- App اصلی -->
+<!-- اپ اصلی -->
 <div id="app" class="hidden">
 
-  <!-- فرم رزومه -->
+  <!-- فرم اطلاعات -->
   <div class="page active" id="formPage">
-    <h2>ساخت رزومه شما</h2>
-    <form id="resumeForm">
-      <input type="text" placeholder="نام و نام خانوادگی" id="name" required>
-      <input type="text" placeholder="تحصیلات" id="education">
-      <input type="text" placeholder="مهارت‌ها" id="skills">
-      <input type="text" placeholder="سابقه کاری" id="experience">
-      <input type="text" placeholder="اطلاعات تماس" id="contact">
-      <input type="text" placeholder="زبان‌ها" id="languages">
-      <textarea placeholder="توضیح کوتاه / هدف شغلی" id="objective"></textarea>
-      <button type="button" onclick="showResume()">نمایش رزومه</button>
-    </form>
+    <h2>اطلاعات فردی</h2>
+
+    <input type="file" id="photo" accept="image/*">
+
+    <input type="text" id="fullname" placeholder="نام و نام خانوادگی">
+    <input type="text" id="jobtitle" placeholder="عنوان شغلی">
+    <input type="email" id="email" placeholder="ایمیل">
+    <input type="tel" id="mobile" placeholder="شماره تماس">
+    <input type="tel" id="phone" placeholder="شماره تلفن ثابت">
+    <input type="date" id="birth">
+    <select id="gender">
+      <option value="">جنسیت</option>
+      <option>زن</option>
+      <option>مرد</option>
+    </select>
+    <input type="text" id="location" placeholder="محل سکونت">
+    <textarea id="about" placeholder="درباره من"></textarea>
+
+    <button onclick="showResume()">نمایش رزومه</button>
   </div>
 
-  <!-- رزومه خروجی -->
+  <!-- رزومه ساخته شده -->
   <div class="page" id="resumePage">
     <h2>رزومه شما</h2>
     <div id="resumeOutput"></div>
-    <button onclick="backToForm()">ویرایش رزومه</button>
+    <button onclick="show('formPage')">ویرایش</button>
   </div>
 
-  <!-- نمونه رزومه تو -->
+  <!-- نمونه رزومه -->
   <div class="page" id="samplePage">
-    <h2>نمونه رزومه من</h2>
+    <h2>نمونه رزومه</h2>
     <div class="card">
-      <h3>Erfan Fallah</h3>
-      <p><strong>تحصیلات:</strong> کارشناسی مهندسی برق</p>
-      <p><strong>مهارت‌ها:</strong> برقکاری ساختمان، تابلو برق، نصب دوربین و دزدگیر</p>
-      <p><strong>سابقه کاری:</strong> پروژه‌های متعدد برق ساختمان و صنعتی</p>
-      <p><strong>اطلاعات تماس:</strong> 0912xxxxxxx</p>
-      <p><strong>زبان‌ها:</strong> فارسی، انگلیسی</p>
-      <p><strong>هدف شغلی:</strong> ارائه خدمات مهندسی برق و همکاری با شرکت‌ها</p>
+      <h3>سنا نیک‌دیده</h3>
+
+      <p><strong>اطلاعات تماس:</strong></p>
+      <p>📞 09357565725</p>
+      <p>📧 Sana nikdidehsana2@gmail.com</p>
+      <p>📍 کرج</p>
+
+      <h4>هدف تحصیلی / شغلی</h4>
+      <p>
+        دانشجو و علاقه‌مند به یادگیری که به دنبال کسب تجربه عملی در کنار تحصیل می‌باشد
+        و تمایل دارد مهارت‌های کامپیوتری و برنامه‌ریزی خود را تقویت کند.
+      </p>
+
+      <h4>مهارت‌ها</h4>
+      <ul>
+        <li>ICDL (Word، Excel، PowerPoint، اینترنت، ویندوز)</li>
+        <li>برنامه‌ریزی مقدماتی و مدیریت زمان</li>
+        <li>توانایی کار تیمی</li>
+        <li>دقت و نظم در انجام کارها</li>
+      </ul>
+
+      <h4>وضعیت تحصیلی</h4>
+      <p>دانشجو رشته فناوری اطلاعات</p>
+      <p>دانشگاه / آموزشگاه: شهید بابایی</p>
+
+      <h4>دوره‌ها</h4>
+      <ul>
+        <li>دوره ICDL</li>
+        <li>آشنایی با اصول برنامه‌ریزی</li>
+      </ul>
+
+      <h4>ویژگی‌های فردی</h4>
+      <ul>
+        <li>مسئولیت‌پذیر</li>
+        <li>منظم و پیگیر</li>
+        <li>علاقه‌مند به یادگیری</li>
+      </ul>
     </div>
   </div>
 
-  <!-- نوار پایین -->
+  <!-- منوی پایین -->
   <div class="nav">
     <button onclick="show('formPage')">فرم</button>
     <button onclick="show('resumePage')">رزومه شما</button>
-    <button onclick="show('samplePage')">نمونه رزومه من</button>
+    <button onclick="show('samplePage')">نمونه</button>
   </div>
-
 </div>
 
 <script src="script.js"></script>

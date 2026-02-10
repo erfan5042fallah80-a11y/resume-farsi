@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رزومه‌ساز فارسی</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Splash / خوش آمدگویی -->
+<div id="splash">
+  <h1>Erfan Fallah</h1>
+  <p>رزومه شخصی من</p>
+  <button onclick="startApp()">شروع</button>
+</div>
+
+<!-- App اصلی -->
+<div id="app" class="hidden">
+
+  <!-- فرم رزومه -->
+  <div class="page active" id="formPage">
+    <h2>ساخت رزومه شما</h2>
+    <form id="resumeForm">
+      <input type="text" placeholder="نام و نام خانوادگی" id="name" required>
+      <input type="text" placeholder="تحصیلات" id="education">
+      <input type="text" placeholder="مهارت‌ها" id="skills">
+      <input type="text" placeholder="سابقه کاری" id="experience">
+      <input type="text" placeholder="اطلاعات تماس" id="contact">
+      <input type="text" placeholder="زبان‌ها" id="languages">
+      <textarea placeholder="توضیح کوتاه / هدف شغلی" id="objective"></textarea>
+      <button type="button" onclick="showResume()">نمایش رزومه</button>
+    </form>
+  </div>
+
+  <!-- رزومه خروجی -->
+  <div class="page" id="resumePage">
+    <h2>رزومه شما</h2>
+    <div id="resumeOutput"></div>
+    <button onclick="backToForm()">ویرایش رزومه</button>
+  </div>
+
+  <!-- نمونه رزومه تو -->
+  <div class="page" id="samplePage">
+    <h2>نمونه رزومه من</h2>
+    <div class="card">
+      <h3>Erfan Fallah</h3>
+      <p><strong>تحصیلات:</strong> کارشناسی مهندسی برق</p>
+      <p><strong>مهارت‌ها:</strong> برقکاری ساختمان، تابلو برق، نصب دوربین و دزدگیر</p>
+      <p><strong>سابقه کاری:</strong> پروژه‌های متعدد برق ساختمان و صنعتی</p>
+      <p><strong>اطلاعات تماس:</strong> 0912xxxxxxx</p>
+      <p><strong>زبان‌ها:</strong> فارسی، انگلیسی</p>
+      <p><strong>هدف شغلی:</strong> ارائه خدمات مهندسی برق و همکاری با شرکت‌ها</p>
+    </div>
+  </div>
+
+  <!-- نوار پایین -->
+  <div class="nav">
+    <button onclick="show('formPage')">فرم</button>
+    <button onclick="show('resumePage')">رزومه شما</button>
+    <button onclick="show('samplePage')">نمونه رزومه من</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

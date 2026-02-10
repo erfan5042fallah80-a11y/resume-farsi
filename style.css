@@ -1,108 +1,36 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #0f172a;
-  color: #fff;
-  direction: rtl;
+function startApp() {
+  document.getElementById("splash").style.display = "none";
+  document.getElementById("app").classList.remove("hidden");
 }
 
-/* Splash / خوش آمدگویی */
-#splash {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  text-align: center;
+function show(id) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
 }
 
-#splash h1 {
-  font-size: 40px;
-}
+function showResume() {
+  const name = fullname.value;
+  const job = jobtitle.value;
+  const emailVal = email.value;
+  const mobileVal = mobile.value;
+  const phoneVal = phone.value;
+  const birthVal = birth.value;
+  const genderVal = gender.value;
+  const locationVal = location.value;
+  const aboutVal = about.value;
 
-#splash p {
-  opacity: 0.9;
-  margin: 10px 0 20px 0;
-}
-
-#splash button {
-  padding: 12px 25px;
-  font-size: 18px;
-  background: #fff;
-  color: #1e40af;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-/* App */
-#app {
-  max-width: 420px;
-  margin: auto;
-  min-height: 100vh;
-  padding-bottom: 70px;
-}
-
-.hidden {
-  display: none;
-}
-
-.page {
-  display: none;
-  padding: 20px;
-}
-
-.page.active {
-  display: block;
-}
-
-input, textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  font-size: 16px;
-}
-
-textarea {
-  height: 80px;
-}
-
-button {
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 12px;
-  background: #2563eb;
-  color: #fff;
-  font-size: 16px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.card {
-  background: #1e293b;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 12px;
-}
-
-.nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  max-width: 420px;
-  display: flex;
-  background: #020617;
-}
-
-.nav button {
-  flex: 1;
-  padding: 15px;
-  font-size: 16px;
-  background: none;
-  border: none;
-  color: #fff;
+  resumeOutput.innerHTML = `
+    <div class="card">
+      <h3>${name}</h3>
+      <p>${job}</p>
+      <p>📧 ${emailVal}</p>
+      <p>📱 ${mobileVal}</p>
+      <p>☎️ ${phoneVal}</p>
+      <p>🎂 ${birthVal}</p>
+      <p>⚧ ${genderVal}</p>
+      <p>📍 ${locationVal}</p>
+      <p>${aboutVal}</p>
+    </div>
+  `;
+  show("resumePage");
 }
